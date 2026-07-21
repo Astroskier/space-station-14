@@ -1,13 +1,16 @@
-﻿using System.Linq;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
+using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Fluids.Components;
+using Content.Shared.Foldable;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Item;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Storage;
 using Content.Shared.Weapons.Ranged.Systems;
+using System.Linq;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -34,6 +37,7 @@ public sealed partial class IngestionSystem
         SubscribeLocalEvent<PuddleComponent, IsDigestibleEvent>(OnPuddleIsDigestible);
 
         SubscribeLocalEvent<PillComponent, BeforeIngestedEvent>(OnPillBeforeEaten);
+        SubscribeLocalEvent<IngestionBlockerComponent, FoldedEvent>(OnBlockerFolded);
     }
 
     private void OnUnremovableIngestion(Entity<UnremoveableComponent> entity, ref IngestibleEvent args)
@@ -48,6 +52,16 @@ public sealed partial class IngestionSystem
         entity.Comp.Enabled = !args.Mask.Comp.IsToggled;
         Dirty(entity);
     }
+    private void OnBlockerFolded(Entity<IngestionBlockerComponent> entity, ref FoldedEvent args)
+    {
+        entity.Comp.Enabled = !args.IsFolded;
+        Dirty(entity);
+
+
+    }
+    /// I apologize for the bloat but dear god everything about toggling/folding need a refactor.
+
+
 
     private void OnIngestionBlockerAttempt(Entity<IngestionBlockerComponent> entity, ref IngestionAttemptEvent args)
     {
