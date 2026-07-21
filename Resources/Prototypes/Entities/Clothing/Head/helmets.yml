@@ -108,10 +108,15 @@
   parent: [ClothingHeadHelmetBase, BaseFoldable, BaseSecurityContraband]
   id: ClothingHeadHelmetRiot
   name: light riot helmet
-  description: It's a helmet specifically designed to protect against close range attacks.
+  description: It's a helmet specifically designed to protect against close range attacks, it has a foldable visor.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/light_riot.rsi
+  - layers:
+  - state: icon
+    map: [ "unfoldedLayer" ]
+  - state: icon
+    map: [ "foldedLayer"]
   - type: Clothing
     sprite: Clothing/Head/Helmets/light_riot.rsi
   - type: IngestionBlocker
