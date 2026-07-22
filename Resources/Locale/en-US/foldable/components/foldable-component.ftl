@@ -15,5 +15,5 @@ fold-unzip-verb = Unzip
 fold-verb-clothing-jacket = Take off jacket
 unfold-verb-clothing-jacket = Put on jacket
 
-fold-raise-visor-verb = Raise visor
 fold-lower-visor-verb = Lower visor
+fold-raise-visor-verb = Raise visor
