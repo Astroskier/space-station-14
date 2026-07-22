@@ -52,12 +52,12 @@ public sealed partial class IngestionSystem
         entity.Comp.Enabled = !args.Mask.Comp.IsToggled;
         Dirty(entity);
     }
+    
     private void OnBlockerFolded(Entity<IngestionBlockerComponent> entity, ref FoldedEvent args)
     {
         entity.Comp.Enabled = !args.IsFolded;
         Dirty(entity);
     }
-    /// I apologize for the bloat but dear god everything about toggling/folding need a refactor.
 
     private void OnIngestionBlockerAttempt(Entity<IngestionBlockerComponent> entity, ref IngestionAttemptEvent args)
     {
