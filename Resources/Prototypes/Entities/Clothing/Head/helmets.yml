@@ -112,11 +112,15 @@
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/light_riot.rsi
-    layers:
-    - state: icon
-      map: [ "unfoldedLayer" ]
-    - state: visor-icon
-      map: [ "foldedLayer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.FoldedVisuals.State:
+        FoldedLayer:
+          True: {visible: true}
+          False: {visible: false}
+        unfoldedLayer:
+          True: {visible: false}
+          False: {visible: true}
   - type: Clothing
     sprite: Clothing/Head/Helmets/light_riot.rsi
   - type: IngestionBlocker
