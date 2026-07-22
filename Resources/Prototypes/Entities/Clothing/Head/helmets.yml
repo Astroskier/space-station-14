@@ -138,6 +138,10 @@
   - type: FoldableClothing
     foldedEquippedPrefix: visor
     foldedHeldPrefix: visor
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
   - type: HideLayerClothing
     layers:
       Hair: HEAD
