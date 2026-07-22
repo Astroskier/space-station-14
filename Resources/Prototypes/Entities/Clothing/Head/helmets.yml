@@ -127,10 +127,6 @@
         Blunt: 0.8
         Slash: 0.8
         Piercing: 0.95
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-    - SecurityHelmet
   - type: Foldable
     canFoldInsideContainer: true
     unfoldVerbText: fold-lower-visor-verb
