@@ -112,6 +112,12 @@
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/light_riot.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-visor
+      map: [ "foldedLayer" ]
+      visible: false
   - type: Clothing
     sprite: Clothing/Head/Helmets/light_riot.rsi
   - type: IngestionBlocker
